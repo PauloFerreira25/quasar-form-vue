@@ -1,8 +1,6 @@
 <template>
   <q-page class="flex flex-center">
-
-    <img alt="Quasar logo" src="../assets/logo.png">
-    
+    <QForm :c="c1"/>
   </q-page>
 </template>
 
@@ -10,7 +8,20 @@
 </style>
 
 <script>
+import QForm from "./form/QForm";
 export default {
-  name: 'HelloWorld'
-}
+  name: "HelloWorld",
+  data: function() {
+    return {
+      c1: {
+        type: "QInput",
+        store: "user",
+        value: "temp.name"
+      }
+    };
+  },
+  components: {
+    QForm
+  }
+};
 </script>

@@ -1,11 +1,14 @@
 import Vue from 'vue'
 import App from './App.vue'
+import Vuex from 'vuex'
+
+Vue.use(Vuex)
 
 import './styles/quasar.styl'
 import '@quasar/extras/fontawesome-v5/fontawesome-v5.css'
 import '@quasar/extras/material-icons/material-icons.css'
 import {
-  Quasar, 
+  Quasar,
   QLayout,
   QHeader,
   QDrawer,
@@ -15,6 +18,7 @@ import {
   QToolbarTitle,
   QBtn,
   QIcon,
+  QInput,
   QList,
   QItem,
   QItemSection,
@@ -33,6 +37,7 @@ Vue.use(Quasar, {
     QToolbarTitle,
     QBtn,
     QIcon,
+    QInput,
     QList,
     QItem,
     QItemSection,
@@ -42,7 +47,7 @@ Vue.use(Quasar, {
   },
   plugins: {
   }
- })
+})
 
 Vue.config.productionTip = false
 
