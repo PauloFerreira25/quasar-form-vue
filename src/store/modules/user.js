@@ -1,4 +1,10 @@
 const state = {
-    temp: undefined,
+    temp: {
+        name: "a"
+    },
     checkoutStatus: null
+}
+export default {
+    namespaced: true,
+    state
 }

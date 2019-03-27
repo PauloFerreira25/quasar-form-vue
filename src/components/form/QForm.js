@@ -1,16 +1,19 @@
 import Vue from 'vue'
-/* eslint-disable */
+
 import ValidateMixin from 'quasar/src/mixins/validate.js'
-import { mapState, mapActions } from 'vuex'
+// import { store } from 'vuex'
 
 export default Vue.extend({
     name: 'QForm',
+    mixins: [ValidateMixin],
     props: {
         c: { required: true },
     },
     render(h) {
         console.log(this.$attrs);
         console.log(this.c);
-        return h(this.c.type);
+        console.log(this.$store)
+
+        return h(this.c.type, { props: { value: this.$store.state.user.temp.name } });
     }
 })

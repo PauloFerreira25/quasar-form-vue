@@ -11,24 +11,18 @@
           icon="menu"
         />
 
-        <q-toolbar-title>
-          Quasar App
-        </q-toolbar-title>
+        <q-toolbar-title>Quasar App</q-toolbar-title>
 
         <div>Quasar v{{ $q.version }}</div>
       </q-toolbar>
     </q-header>
 
-    <q-drawer
-      v-model="leftDrawerOpen"
-      bordered
-      content-class="bg-grey-2"
-    >
+    <q-drawer v-model="leftDrawerOpen" bordered content-class="bg-grey-2">
       <q-list>
         <q-item-label header>Essential Links</q-item-label>
         <q-item clickable tag="a" target="_blank" href="https://v1.quasar-framework.org">
           <q-item-section avatar>
-            <q-icon name="school" />
+            <q-icon name="school"/>
           </q-item-section>
           <q-item-section>
             <q-item-label>Docs</q-item-label>
@@ -37,7 +31,7 @@
         </q-item>
         <q-item clickable tag="a" target="_blank" href="https://github.com/quasarframework/">
           <q-item-section avatar>
-            <q-icon name="code" />
+            <q-icon name="code"/>
           </q-item-section>
           <q-item-section>
             <q-item-label>Github</q-item-label>
@@ -46,7 +40,7 @@
         </q-item>
         <q-item clickable tag="a" target="_blank" href="http://chat.quasar-framework.org">
           <q-item-section avatar>
-            <q-icon name="chat" />
+            <q-icon name="chat"/>
           </q-item-section>
           <q-item-section>
             <q-item-label>Discord Chat Channel</q-item-label>
@@ -55,7 +49,7 @@
         </q-item>
         <q-item clickable tag="a" target="_blank" href="https://forum.quasar-framework.org">
           <q-item-section avatar>
-            <q-icon name="forum" />
+            <q-icon name="forum"/>
           </q-item-section>
           <q-item-section>
             <q-item-label>Forum</q-item-label>
@@ -64,7 +58,7 @@
         </q-item>
         <q-item clickable tag="a" target="_blank" href="https://twitter.com/quasarframework">
           <q-item-section avatar>
-            <q-icon name="rss_feed" />
+            <q-icon name="rss_feed"/>
           </q-item-section>
           <q-item-section>
             <q-item-label>Twitter</q-item-label>
@@ -75,27 +69,30 @@
     </q-drawer>
 
     <q-page-container>
-      <HelloWorld />
+      <HelloWorld/>
     </q-page-container>
   </q-layout>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import HelloWorld from "./components/HelloWorld.vue";
 
 export default {
-  name: 'LayoutDefault',
+  name: "LayoutDefault",
 
   components: {
     HelloWorld
   },
 
-  data () {
+  data() {
     return {
       leftDrawerOpen: this.$q.platform.is.desktop
-    }
+    };
+  },
+  created() {
+    console.log("store from $store", this.$store);
   }
-}
+};
 </script>
 
 <style>

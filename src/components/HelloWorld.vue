@@ -16,7 +16,8 @@ export default {
       c1: {
         type: "QInput",
         store: "user",
-        value: "temp.name"
+        state: "temp.name",
+        get: "name"
       }
     };
   },
