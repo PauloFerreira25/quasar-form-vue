@@ -1,6 +1,6 @@
 <template>
   <q-page class="flex flex-center">
-    <QForm :c="c1"/>
+    <QAutoForm :c="c1"/>
   </q-page>
 </template>
 
@@ -8,7 +8,7 @@
 </style>
 
 <script>
-import QForm from "./form/QForm";
+import QAutoForm from "./autoForm/QAutoForm";
 export default {
   name: "HelloWorld",
   data: function() {
@@ -22,7 +22,7 @@ export default {
     };
   },
   components: {
-    QForm
+    QAutoForm
   }
 };
 </script>

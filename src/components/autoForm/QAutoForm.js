@@ -4,7 +4,7 @@ import ValidateMixin from 'quasar/src/mixins/validate.js'
 // import { store } from 'vuex'
 
 export default Vue.extend({
-    name: 'QForm',
+    name: 'QAutoForm',
     mixins: [ValidateMixin],
     props: {
         c: { required: true },
