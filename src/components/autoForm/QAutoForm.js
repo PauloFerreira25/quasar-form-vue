@@ -7,13 +7,29 @@ export default Vue.extend({
     name: 'QAutoForm',
     mixins: [ValidateMixin],
     props: {
-        c: { required: true },
+        myProp: { required: true },
     },
     render(h) {
         console.log(this.$attrs);
-        console.log(this.c);
+        console.log(this.myProp);
         console.log(this.$store)
 
-        return h(this.c.type, { props: { value: this.$store.state.user.temp.name } });
+        if (this.myProp.childrens) {
+            let childrens = this.myProp.childrens.map(e => {
+                let s = {
+                    props: {
+                        myProp: e
+                    }
+                }
+                return h('QAutoForm', s)
+            })
+            return h(this.myProp.type, { props: { value: this.$store.state.user.temp.name } }, childrens);
+        } else {
+            return h(this.myProp.type, { props: { value: this.$store.state.user.temp.name } });
+        }
+
+
+
+
     }
 })

@@ -1,6 +1,6 @@
 <template>
   <q-page class="flex flex-center">
-    <QAutoForm :c="c1"/>
+    <QAutoForm :myProp="myProp"/>
   </q-page>
 </template>
 
@@ -13,11 +13,22 @@ export default {
   name: "HelloWorld",
   data: function() {
     return {
-      c1: {
-        type: "QInput",
-        store: "user",
-        state: "temp.name",
-        get: "name"
+      myProp: {
+        type: "QCard",
+        childrens: [
+          {
+            type: "QInput",
+            store: "user",
+            state: "temp.name",
+            get: "name"
+          },
+          {
+            type: "QInput",
+            store: "user",
+            state: "temp.name",
+            get: "name"
+          }
+        ]
       }
     };
   },

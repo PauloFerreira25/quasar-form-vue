@@ -1,6 +1,6 @@
 const state = {
     temp: {
-        name: "a"
+        name: "b"
     },
     checkoutStatus: null
 }
