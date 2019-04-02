@@ -1,31 +1,31 @@
 import Vue from 'vue'
 
 import ValidateMixin from 'quasar/src/mixins/validate.js'
-// import { store } from 'vuex'
+// mport { mapState } from 'vuex'
 
 export default Vue.extend({
     name: 'QAutoForm',
     mixins: [ValidateMixin],
     props: {
-        myProp: { required: true },
+        item: { required: true },
     },
     render(h) {
         console.log(this.$attrs);
-        console.log(this.myProp);
+        console.log(this.item);
         console.log(this.$store)
-
-        if (this.myProp.childrens) {
-            let childrens = this.myProp.childrens.map(e => {
+        let conf = Object.assign({}, this.item.vconf);
+        if (this.item.childrens) {
+            let childrens = this.item.childrens.map(e => {
                 let s = {
                     props: {
-                        myProp: e
+                        item: e
                     }
                 }
                 return h('QAutoForm', s)
             })
-            return h(this.myProp.type, { props: { value: this.$store.state.user.temp.name } }, childrens);
+            return h(this.item.type, conf, childrens);
         } else {
-            return h(this.myProp.type, { props: { value: this.$store.state.user.temp.name } });
+            return h(this.item.type, conf);
         }
 
 
