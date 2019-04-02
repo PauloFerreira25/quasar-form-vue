@@ -30,9 +30,10 @@ export default {
                     "cursor-pointer": true
                   }
                 },
-                store: "user",
-                state: "temp.name",
-                get: "name"
+                store: {
+                  module: "user",
+                  state: "temp.name"
+                }
               },
               {
                 type: "QInput",
@@ -41,9 +42,22 @@ export default {
                     label: "name2"
                   }
                 },
-                store: "user",
-                state: "temp.name",
-                get: "name"
+                store: {
+                  module: "user",
+                  state: "temp.name"
+                },
+                event: [
+                  {
+                    name: "input",
+                    handler: {
+                      store: {
+                        module: "user",
+                        action: "updateState",
+                        state: true
+                      }
+                    }
+                  }
+                ]
               }
             ]
           },
