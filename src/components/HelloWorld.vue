@@ -21,7 +21,7 @@ export default {
             childrens: [
               {
                 type: "QInput",
-                vconf: {
+                properties: {
                   props: {
                     label: "name1",
                     counter: true
@@ -36,7 +36,7 @@ export default {
               },
               {
                 type: "QInput",
-                vconf: {
+                properties: {
                   props: {
                     label: "name2"
                   }
@@ -52,7 +52,7 @@ export default {
             childrens: [
               {
                 type: "QBtn",
-                vconf: {
+                properties: {
                   nativeOn: {
                     click: () => {
                       alert("ola");
@@ -65,7 +65,7 @@ export default {
               },
               {
                 type: "QBtn",
-                vconf: {
+                properties: {
                   domProps: {
                     innerHTML: "b2"
                   }

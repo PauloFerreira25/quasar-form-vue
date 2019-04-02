@@ -13,7 +13,8 @@ export default Vue.extend({
         console.log(this.$attrs);
         console.log(this.item);
         console.log(this.$store)
-        let conf = Object.assign({}, this.item.vconf);
+        let properties = Object.assign({}, this.item.properties);
+        let slot = this.item.slots || this.$slots.default
         if (this.item.childrens) {
             let childrens = this.item.childrens.map(e => {
                 let s = {
@@ -23,9 +24,9 @@ export default Vue.extend({
                 }
                 return h('QAutoForm', s)
             })
-            return h(this.item.type, conf, childrens);
+            return h(this.item.type, properties, childrens);
         } else {
-            return h(this.item.type, conf);
+            return h(this.item.type, properties, slot);
         }
 
 
