@@ -2,6 +2,7 @@ import Vue from 'vue'
 
 import ValidateMixin from 'quasar/src/mixins/validate.js'
 import { isArray } from 'util';
+import { setObjectValueByStringNameTree } from '../../utils/objectHack'
 
 export default Vue.extend({
     name: 'QAutoForm',
@@ -26,9 +27,22 @@ export default Vue.extend({
                 }
                 this.$store.dispatch(action, payload)
             }
+        },
+        i18n() {
+            if (this.item.i18n.handler) {
+                if (this.item.i18n.handler.t) {
+                    setObjectValueByStringNameTree(this.item.i18n.handler.t.settext, this.item, this.$t(this.item.i18n.handler.t.gettext))
+                }
+            }
+
         }
     },
     render(h) {
+
+
+        if (this.item.i18n) {
+            this.i18n()
+        }
         console.log(this.$attrs);
         console.log(this.item);
         console.log(this.$store)

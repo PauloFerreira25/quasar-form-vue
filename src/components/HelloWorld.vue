@@ -46,6 +46,14 @@ export default {
                   module: "user",
                   state: "temp.name"
                 },
+                i18n: {
+                  handler: {
+                    t: {
+                      gettext: "message.user.name",
+                      settext: "properties.props.label"
+                    }
+                  }
+                },
                 event: [
                   {
                     name: "input",
@@ -74,6 +82,14 @@ export default {
                   },
                   domProps: {
                     innerHTML: "b1"
+                  }
+                },
+                i18n: {
+                  handler: {
+                    t: {
+                      gettext: "message.button.alert",
+                      settext: "properties.domProps.innerHTML"
+                    }
                   }
                 }
               },
