@@ -3,6 +3,7 @@ import Vuex from 'vuex'
 import cart from './modules/cart'
 import products from './modules/products'
 import user from './modules/user'
+import config from './modules/config'
 
 Vue.use(Vuex)
 
@@ -12,7 +13,8 @@ export default new Vuex.Store({
     modules: {
         cart,
         products,
-        user
+        user,
+        config
     },
     strict: debug
 })
